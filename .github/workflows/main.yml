@@ -20,12 +20,25 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
-
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
-      - name: Run two lines
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
         run: |
-          echo "this is first line"
-          echo "this is second line"
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          
+      - name: i am java version cheking
+        run: java -version
+      - name: i am maven version checking
+        run: mvn --version
+      - name: i am  python version checking
+        run: python --version
+      - name: i am docker version checking
+        run: docker -v
+      - name: i am terraform version checking
+        run: terraform version
+      - name: i am aws cli chekcing
+        run: aws --version 
